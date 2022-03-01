@@ -11,3 +11,27 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
+
+if [ -f ~/.functions ]; then
+  . ~/.functions
+fi
+
+if [ -f ~/.aliases ]; then
+  . ~/.aliases
+fi
+
+# Set vim as default editor
+# export EDITOR=vim
+
+# Delete whole word with CTRL + Backspace
+bindkey '^H' backward-kill-word
+bindkey '^[[3;5~' kill-word 
+
+
+# GPG Setup
+export GPG_TTY=$(tty)
+
+#unset SSH_AGENT_PID
+#if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+#  export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"
+#fi
