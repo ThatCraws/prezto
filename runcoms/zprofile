@@ -16,16 +16,17 @@ fi
 #
 # Editors
 #
-
 if [[ -z "$EDITOR" ]]; then
-  export EDITOR='nano'
+  export EDITOR='nvim'
 fi
 if [[ -z "$VISUAL" ]]; then
-  export VISUAL='nano'
+  export VISUAL='nvim'
 fi
 if [[ -z "$PAGER" ]]; then
   export PAGER='less'
 fi
+
+export SYSTEMD_EDITOR='/usr/bin/nvim'
 
 #
 # Language
@@ -81,6 +82,7 @@ if [[ -z "$LESSOPEN" ]] && (( $#commands[(i)lesspipe(|.sh)] )); then
   export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
 fi
 
+# Start XSession
 if [ "$(tty)" = "/dev/tty1" ] && [ -z "${DISPLAY}" ]; then
 	exec startx
 fi
