@@ -23,7 +23,7 @@ fi
 # Set vim as default editor
 # export EDITOR=vim
 
-# Delete whole word with CTRL + Backspace
+# Delete whole word with CTRL + Backspace and CTRL + Del (Use CTRL + v in terminal followed by key to get keycode).
 bindkey '^H' backward-kill-word
 bindkey '^[[3;5~' kill-word 
 
