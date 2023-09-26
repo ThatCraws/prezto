@@ -26,7 +26,15 @@ if [[ -z "$PAGER" ]]; then
   export PAGER='less'
 fi
 
-export SYSTEMD_EDITOR='/usr/bin/nvim'
+if [[ -z "$EDITOR" ]]; then
+  export EDITOR='nvim'
+fi
+if [[ -z "$VISUAL" ]]; then
+  export VISUAL='nvim'
+fi
+if [[ -z "$PAGER" ]]; then
+  export PAGER='less'
+fi
 
 #
 # Language
